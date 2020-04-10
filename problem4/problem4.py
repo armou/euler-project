@@ -18,7 +18,7 @@ def highest_palindrome_product():
     res = 0
     for x in range(100, 1000):
         for y in range(x, 1000):
-            if is_palindrome(x * y) and x * y > res:
+            if x * y > res and is_palindrome(x * y):
                 res = x * y
     return res
 
