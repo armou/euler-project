@@ -2,13 +2,6 @@
 
 # What is the 10 001st prime number?
 
-def next_prime(n):
-    if n < 2:
-        return 2
-    while not is_prime(n):
-        n += 1
-    return n
-
 def is_prime(n):
     if n < 2:
         return False
