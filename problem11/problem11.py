@@ -97,6 +97,6 @@ def get_greatest_product(g, step):
                 lst.append(product_diag_left(g, i, j, step))
             if len(lst):
                 highest = max(lst) if max(lst) > highest else highest
-    print(highest)
+    return highest
 
-get_greatest_product(create_grid(grid), 4)
+print(get_greatest_product(create_grid(grid), 4))
