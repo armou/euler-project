@@ -14,7 +14,7 @@
 # NOTE: Once the chain starts the terms are allowed to go above one million.
 
 
-def try_sequence(start):
+def try_sequence(start): ## Function to count the terms in the sequence
     count = 1
     while start > 1:
         if start % 2:
@@ -25,14 +25,14 @@ def try_sequence(start):
     return count
 
 def collatz_sequence(r):
-    start = r if r % 2 else r - 1
+    start = r if r % 2 else r - 1 ## Start at highest odd number under our Number R
     highest = 0
     count = 0
-    while start > r // 2:
-        if try_sequence(start) > count:
-            count = try_sequence(start)
+    while start > r // 2: ## Try all value from our starting highest value, until Number R / 2
+        if try_sequence(start) > count: ## Call our function to count the terms in the sequence
+            count = try_sequence(start) ## Store the new record
             highest = start
-        start -= 2
+        start -= 2 ## Decrease our Starting value by 2 (to keep an odd number)
     return highest
 
 print(collatz_sequence(1000000))
